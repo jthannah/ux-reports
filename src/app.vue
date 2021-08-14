@@ -51,12 +51,11 @@
     </div>
   </div>
   <apexchart width="500" :options="chartOptions" :series="series"></apexchart>
-<!--  <DoughnutChart ref="doughnutRef" :chart-data="testData" :options="options" />-->
 </template>
 
 <script lang="ts">
 import ReportApi from '@/api/reports'
-import { computed, defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 // import { DoughnutChart, useDoughnutChart } from 'vue-chart-3'
 // import { Chart, ChartData, ChartOptions, registerables } from 'chart.js'
 // Chart.register(...registerables)
@@ -81,7 +80,7 @@ export default defineComponent({
     ReportApi.getData().then((data) => {
       console.log(data)
     })
-    const series = [0.9158410887621303,0.06804763334334012,0.016111277894526124]
+    const series = [0.9158410887621303, 0.06804763334334012, 0.016111277894526124]
     const chartOptions = {
       chart: {
         type: 'pie',

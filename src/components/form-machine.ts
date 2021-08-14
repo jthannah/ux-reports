@@ -1,5 +1,5 @@
 import { ActionObject, assign, DoneInvokeEvent, Machine, StateMachine, StateSchema } from 'xstate'
-import * as Sentry from '@sentry/browser'
+//import * as Sentry from '@sentry/browser'
 import { v4 as uuid } from 'uuid'
 
 export interface FormContext<TFormData> {
@@ -28,7 +28,7 @@ const createActions = <TFormData>() => {
       error: (_, event: DoneInvokeEvent<never>) => event.data,
     }) as ActionObject<FormContext<TFormData>, FormEvents<TFormData>>,
     recordError: (context: FormContext<TFormData>) => {
-      Sentry.captureException(context.error)
+      //Sentry.captureException(context.error)
     },
     clearError: assign({
       error: undefined,

@@ -1,5 +1,5 @@
 import { ActionObject, assign, DoneInvokeEvent, Machine, StateMachine } from 'xstate'
-import * as Sentry from '@sentry/browser'
+//import * as Sentry from '@sentry/browser'
 import { isEmpty } from 'lodash-es'
 
 export interface DataSchema {
@@ -32,7 +32,7 @@ const actions = {
     error: (_, event: DoneInvokeEvent<never>) => event.data,
   }) as ActionObject<DataContext<unknown>, DataEvents>,
   recordError: (context: DataContext<unknown>) => {
-    Sentry.captureException(context.error)
+    //Sentry.captureException(context.error)
   },
   successCallback: () => {
     // do nothing by default, override this for your specific use case
